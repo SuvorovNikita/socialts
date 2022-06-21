@@ -1,0 +1,12 @@
+.content {
+  grid-area: c;
+}
+.bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.item {
+  color: tomato;
+}
