@@ -1,9 +1,12 @@
 .nav {
   grid-area: n;
+  background-color: blanchedalmond;
+  padding: 20px;
 }
-.link {
-  color: black;
+.link a {
+  color: saddlebrown;
+  text-decoration: none;
 }
 .active {
-  color: tomato;
+  font-weight: bold;
 }

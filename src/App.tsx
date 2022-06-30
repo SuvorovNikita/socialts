@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import { Routes, Route } from 'react-router-dom';
+
+import Header from './components/Header';
+import Navbar from './components/Navbar';
+import Profile from './components/Profile';
+import Dialogs from './components/Dialogs';
+import News from './components/News';
+import Music from './components/Music/index';
+import Settings from './components/Settings';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="app-wrapper">
+        <Header />
+        <Navbar />
+        <div className="app-wrapper-content">
+          <Routes>
+            <Route path="/dialogs" element={<Dialogs />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/music" element={<Music />} />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
+        </div>
+      </div>
     </div>
   );
 }
