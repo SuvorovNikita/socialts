@@ -4,7 +4,7 @@ const MyPosts = () => {
   return (
     <>
       <div>
-        My Posts
+        <h1>My Posts</h1>
         <div>
           <textarea name="" id=""></textarea>
           <button>Add post</button>
