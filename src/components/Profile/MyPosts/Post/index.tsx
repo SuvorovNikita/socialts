@@ -4,9 +4,10 @@ import React from 'react';
 type PostTypes = {
   message: string;
   like: number;
+  id: number;
 };
 
-const Post = ({ message, like }: PostTypes) => {
+const Post = ({ message, like, id }: PostTypes) => {
   return (
     <>
       <div className={classes.item}>
