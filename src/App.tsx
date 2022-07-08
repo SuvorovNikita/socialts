@@ -1,5 +1,3 @@
-import './App.css';
-
 import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
@@ -10,7 +8,9 @@ import News from './components/News';
 import Music from './components/Music/index';
 import Settings from './components/Settings';
 
-function App() {
+import './App.css';
+
+function App(props: any) {
   return (
     <div className="App">
       <div className="app-wrapper">
@@ -18,8 +18,13 @@ function App() {
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/dialogs" element={<Dialogs />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route
+              path="/dialogs"
+              element={
+                <Dialogs messagesData={props.messagesData} dialogsData={props.dialogsData} />
+              }
+            />
+            <Route path="/profile" element={<Profile postsData={props.postsData} />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
