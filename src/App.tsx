@@ -9,8 +9,13 @@ import Music from './components/Music/index';
 import Settings from './components/Settings';
 
 import './App.css';
+import { StateType } from './redux/state';
 
-function App(props: any) {
+type PropsType = {
+  state: StateType;
+};
+
+function App(props: PropsType) {
   return (
     <div className="App">
       <div className="app-wrapper">
@@ -21,10 +26,13 @@ function App(props: any) {
             <Route
               path="/dialogs"
               element={
-                <Dialogs messagesData={props.messagesData} dialogsData={props.dialogsData} />
+                <Dialogs
+                  messages={props.state.dialogsPage.messages}
+                  dialogs={props.state.dialogsPage.dialogs}
+                />
               }
             />
-            <Route path="/profile" element={<Profile postsData={props.postsData} />} />
+            <Route path="/profile" element={<Profile posts={props.state.profilePage.posts} />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />

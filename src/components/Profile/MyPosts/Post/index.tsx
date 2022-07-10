@@ -1,13 +1,13 @@
 import classes from '../Post/Post.module.css';
 import React from 'react';
 
-type PostTypes = {
+type PropsType = {
   message: string;
   like: number;
   id: number;
 };
 
-const Post = ({ message, like, id }: PostTypes) => {
+const Post = ({ message, like, id }: PropsType) => {
   return (
     <>
       <div className={classes.item}>
